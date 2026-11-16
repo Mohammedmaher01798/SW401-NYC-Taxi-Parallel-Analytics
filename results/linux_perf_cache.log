@@ -1,0 +1,39 @@
+DATASET,data/clean_full.csv,rows=23592248,load_seconds=1.872,max_threads=4
+CHECKSUM,trips=23592248,total_fare=460207047.62,total_revenue=674674397.89,z_anomalies=26484,hard_anomalies=51792,max_fpm=257989.08
+CACHE,stride,1,serial,0.032281
+CACHE,stride,1,omp8,0.009720
+CACHE,stride,2,serial,0.035110
+CACHE,stride,2,omp8,0.010544
+CACHE,stride,4,serial,0.039873
+CACHE,stride,4,omp8,0.019529
+CACHE,stride,8,serial,0.051509
+CACHE,stride,8,omp8,0.035835
+CACHE,stride,16,serial,0.100126
+CACHE,stride,16,omp8,0.065201
+CACHE,stride,32,serial,0.164309
+CACHE,stride,32,omp8,0.088672
+CACHE,stride,64,serial,0.225587
+CACHE,stride,64,omp8,0.109930
+CACHE,stride,1024,serial,0.303000
+CACHE,stride,1024,omp8,0.390223
+CACHE,layout,AoS_24B,serial,0.041635
+CACHE,layout,SoA_6B,serial,0.026528
+CACHE,layout,AoS_24B,omp8,0.022441
+CACHE,layout,SoA_6B,omp8,0.009281
+CACHE,falsesharing,adjacent_counters,omp8,0.148047
+CACHE,falsesharing,padded_counters,omp8,0.110249
+CACHE,falsesharing,reduction_clause,omp8,0.104311
+
+ Performance counter stats for './bin/parallel_omp data/clean_full.csv cache 3':
+
+         15,228.30 msec task-clock                                                            
+            50,034      context-switches                                                      
+             7,579      cpu-migrations                                                        
+            89,559      page-faults                                                           
+
+       8.872686996 seconds time elapsed
+
+      13.588793000 seconds user
+       1.706126000 seconds sys
+
+

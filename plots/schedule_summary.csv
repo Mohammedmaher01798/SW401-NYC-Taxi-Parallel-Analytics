@@ -1,0 +1,11 @@
+schedule,chunk,median_s
+static,0,0.043791
+static,64,0.078344
+static,4096,0.046366
+static,262144,0.044829
+dynamic,64,0.068946
+dynamic,4096,0.044794
+dynamic,262144,0.044714
+guided,64,0.043337
+guided,4096,0.042929
+guided,262144,0.044367

@@ -1,0 +1,14 @@
+# Large data files & raw downloads (reproducible via preprocessing/preprocess.py)
+data/*.csv
+data/*.parquet
+data/raw/
+data/preprocess_run.log
+
+# Compiled binaries
+bin/
+
+# Linux profiling outputs & Python cache
+gmon.out
+perf.data*
+__pycache__/
+*.pyc

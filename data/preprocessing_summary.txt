@@ -1,0 +1,23 @@
+=== PREPROCESSING SUMMARY (NYC TLC Yellow Taxi, Jan-Aug 2023) ===
+BEFORE (raw Parquet, 8 monthly files):
+  yellow_tripdata_2023-01.parquet         3,066,766 records      47.7 MB
+  yellow_tripdata_2023-02.parquet         2,913,955 records      47.7 MB
+  yellow_tripdata_2023-03.parquet         3,403,766 records      56.1 MB
+  yellow_tripdata_2023-04.parquet         3,288,250 records      54.2 MB
+  yellow_tripdata_2023-05.parquet         3,513,649 records      58.7 MB
+  yellow_tripdata_2023-06.parquet         3,307,234 records      55.0 MB
+  yellow_tripdata_2023-07.parquet         2,907,108 records      48.4 MB
+  yellow_tripdata_2023-08.parquet         2,824,209 records      48.2 MB
+  TOTAL raw: 25,224,937 records, 415,940,116 bytes (415.9 MB Parquet, compressed)
+Rows removed by cleaning step:
+  null values in used columns        : 701,524
+  distance/fare/total<=0, tip<0, pax<=0 : 929,892
+  pickup outside its month or dropoff<=pickup : 1,019
+  zone id outside 1..265             : 0
+  trip_distance >= 1000 miles        : 254
+AFTER:
+  clean_full.csv    : 23,592,248 records, 809,535,908 bytes (0.810 GB)
+  sample_100mb.csv  : 2,914,997 records, 100,023,489 bytes (100.0 MB)
+  sample_500mb.csv  : 14,570,340 records, 499,963,267 bytes (500.0 MB)
+  retained: 93.53% of raw records
+  Columns: PULocationID,DOLocationID,pickup_hour,passenger_count,trip_distance,fare_amount,tip_amount,total_amount
